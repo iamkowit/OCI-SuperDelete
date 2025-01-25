@@ -221,39 +221,39 @@ if confirm == "yes":
         DeleteAny(config, signer, processCompartments, "devops.DevopsClient", "repository", ObjectNameVar="name")
         DeleteAny(config, signer, processCompartments, "devops.DevopsClient", "project", ObjectNameVar="name")
 
-        print_header("Deleting Oracle Cloud VMware solution at " + CurrentTimeString() + "@ " + region, 1)
-        DeleteAny(config, signer, processCompartments, "ocvp.SddcClient", "sddc")
+        # print_header("Deleting Oracle Cloud VMware solution at " + CurrentTimeString() + "@ " + region, 1)
+        # DeleteAny(config, signer, processCompartments, "ocvp.SddcClient", "sddc")
 
-        print_header("Deleting Database Migrations at " + CurrentTimeString() + "@ " + region, 1)
-        elements = ["migration", "connection"]
-        for element in elements:
-            DeleteAny(config, signer, processCompartments, "database_migration.DatabaseMigrationClient", element)
+        # print_header("Deleting Database Migrations at " + CurrentTimeString() + "@ " + region, 1)
+        # elements = ["migration", "connection"]
+        # for element in elements:
+        #     DeleteAny(config, signer, processCompartments, "database_migration.DatabaseMigrationClient", element)
 
-        print_header("Deleting Migrations at " + CurrentTimeString() + "@ " + region, 1)
-        DeleteAny(config, signer, processCompartments, "cloud_migrations.MigrationClient", "migration_plan")
-        DeleteAny(config, signer, processCompartments, "cloud_migrations.MigrationClient", "migration")
-        DeleteAny(config, signer, processCompartments, "cloud_migrations.MigrationClient", "replication_schedule")
-        DeleteAny(config, signer, processCompartments, "cloud_bridge.OcbAgentSvcClient", "environment")
-        DeleteAny(config, signer, processCompartments, "cloud_bridge.OcbAgentSvcClient", "agent_dependency")
-        DeleteAny(config, signer, processCompartments, "cloud_bridge.DiscoveryClient", "asset_source")
-        DeleteAny(config, signer, processCompartments, "cloud_bridge.DiscoveryClient", "discovery_schedule")
-        DeleteAny(config, signer, processCompartments, "cloud_bridge.InventoryClient", "asset")
-        DeleteAny(config, signer, processCompartments, "cloud_bridge.InventoryClient", "inventory")
+        # print_header("Deleting Migrations at " + CurrentTimeString() + "@ " + region, 1)
+        # DeleteAny(config, signer, processCompartments, "cloud_migrations.MigrationClient", "migration_plan")
+        # DeleteAny(config, signer, processCompartments, "cloud_migrations.MigrationClient", "migration")
+        # DeleteAny(config, signer, processCompartments, "cloud_migrations.MigrationClient", "replication_schedule")
+        # DeleteAny(config, signer, processCompartments, "cloud_bridge.OcbAgentSvcClient", "environment")
+        # DeleteAny(config, signer, processCompartments, "cloud_bridge.OcbAgentSvcClient", "agent_dependency")
+        # DeleteAny(config, signer, processCompartments, "cloud_bridge.DiscoveryClient", "asset_source")
+        # DeleteAny(config, signer, processCompartments, "cloud_bridge.DiscoveryClient", "discovery_schedule")
+        # DeleteAny(config, signer, processCompartments, "cloud_bridge.InventoryClient", "asset")
+        # DeleteAny(config, signer, processCompartments, "cloud_bridge.InventoryClient", "inventory")
 
-        print_header("Deleting GoldenGate at " + CurrentTimeString() + "@ " + region, 1)
-        elements = ["database_registration", "deployment", "deployment_backup"]
-        for element in elements:
-            DeleteAny(config, signer, processCompartments, "golden_gate.GoldenGateClient", element)
+        # print_header("Deleting GoldenGate at " + CurrentTimeString() + "@ " + region, 1)
+        # elements = ["database_registration", "deployment", "deployment_backup"]
+        # for element in elements:
+        #     DeleteAny(config, signer, processCompartments, "golden_gate.GoldenGateClient", element)
 
         print_header("Deleting Vulnerability Scanning Services at " + CurrentTimeString() + "@ " + region, 1)
         elements = ["host_agent_scan_result", "host_port_scan_result", "host_cis_benchmark_scan_result", "container_scan_result"]
         for element in elements:
-            DeleteAny(config, signer, processCompartments, "vulnerability_scanning.VulnerabilityScanningClient", element, DelState="", DelingSate="")
+           DeleteAny(config, signer, processCompartments, "vulnerability_scanning.VulnerabilityScanningClient", element, DelState="", DelingSate="")
         DeleteAny(config, signer, processCompartments, "vulnerability_scanning.VulnerabilityScanningClient", "host_scan_target")
         DeleteAny(config, signer, processCompartments, "vulnerability_scanning.VulnerabilityScanningClient", "container_scan_target")
         elements = ["host_scan_recipe", "container_scan_recipe"]
         for element in elements:
-            DeleteAny(config, signer, processCompartments, "vulnerability_scanning.VulnerabilityScanningClient", element, DelState="", DelingSate="")
+           DeleteAny(config, signer, processCompartments, "vulnerability_scanning.VulnerabilityScanningClient", element, DelState="", DelingSate="")
 
         print_header("Deleting Bastion Services at " + CurrentTimeString() + "@ " + region, 1)
         DeleteAny(config, signer, processCompartments, "bastion.BastionClient", "bastion", ObjectNameVar="name")
